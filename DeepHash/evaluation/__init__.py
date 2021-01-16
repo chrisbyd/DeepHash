@@ -29,8 +29,8 @@ def get_mAPs_rerank(q_output, q_labels, db_output, db_labels, Rs, dist_type):
 
     bit_n = query_output.shape[1]
 
-    ips = np.dot(query_output, database_output.T)
-    ips = (bit_n - ips) / 2
+    ips = np.dot(query_output, database_output.T)  #distance matrix
+    ips = (bit_n - ips) / 2 #
 
     mAPX = []
     query_labels = q_labels
@@ -90,10 +90,10 @@ class MAPs:
         query_output = sign(query.output)
         database_output = sign(database.output)
 
-        bit_n = query_output.shape[1]
+        bit_n = query_output.shape[1] #bit number
 
         ips = np.dot(query_output, database_output.T)
-        ips = (bit_n - ips) / 2
+        ips = (bit_n - ips) / 2 #
         ids = np.argsort(ips, 1)
 
         precX = []

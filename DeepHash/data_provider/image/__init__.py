@@ -44,7 +44,9 @@ class Dataset(object):
         self.all_data = self.img_all_data
 
     def get_img(self, i):
+   
         path = os.path.join(self.data_root, self.lines[i].strip().split()[0])
+
         return cv2.resize(cv2.imread(path), (256, 256))
 
     def get_label(self, i):

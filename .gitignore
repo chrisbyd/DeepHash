@@ -104,3 +104,4 @@ pretrained_model/
 tflog/
 models/
 *.swp
+data/

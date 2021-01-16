@@ -6,6 +6,7 @@ import model.dhn.dhn as model
 import sys
 from pprint import pprint
 import os
+import os
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -20,11 +21,14 @@ _dataset = sys.argv[6]
 gpu = sys.argv[7]
 log_dir = sys.argv[8]
 data_root = sys.argv[9]
+test_mode = sys.argv[10]
 
 label_dims = {'cifar10': 10, 'cub': 200, 'nuswide_21': 21,
-              'nuswide_81': 81, 'coco': 80, 'imagenet': 100, 'cifar10_zero_shot': 10}
+              'nuswide_81': 81, 'coco': 80, 'imagenet': 100, 'cifar10_zero_shot': 10,
+              'vehicleID' : 13164, 'VeRi': 576}
 Rs = {'cifar10': 54000, 'nuswide_81': 5000, 'coco': 5000,
-      'nuswide_21': 5000, 'imagenet': 5000, 'cifar10_zero_shot': 15000}
+      'nuswide_21': 5000, 'imagenet': 5000, 'cifar10_zero_shot': 15000,
+      'vehicleID' :5000, 'VeRi' :5000}
 
 config = {
     'device': '/gpu:' + gpu,
@@ -39,7 +43,7 @@ config = {
     'alpha': alpha,
 
     'R': Rs[_dataset],
-    'model_weights': '../../core/architecture/single_model/pretrained_model/reference_pretrain.npy',
+    'model_weights': '../../architecture/pretrained_model/reference_pretrain.npy',
 
     'img_model': 'alexnet',
     'loss_type': 'normed_cross_entropy',  # normed_cross_entropy # TODO
@@ -51,16 +55,16 @@ config = {
     'cq_lambda': cq_lambda,
 
     'label_dim': label_dims[_dataset],
-    'img_tr': "/home/caoyue/data/{}/train.txt".format(_dataset),
-    'img_te': "/home/caoyue/data/{}/test.txt".format(_dataset),
-    'img_db': "/home/caoyue/data/{}/database.txt".format(_dataset),
+    'img_tr': "../../data/{}/train.txt".format(_dataset),
+    'img_te': "../../data/{}/test_{}.txt".format(_dataset,test_mode),
+    'img_db': "../../data/{}/database_{}.txt".format(_dataset,test_mode),
     'save_dir': "./models/",
     'log_dir': log_dir,
     'dataset': _dataset
 }
 
 pprint(config)
-
+print(os.getcwd())
 train_img = dataset.import_train(data_root, config['img_tr'])
 model_weights = model.train(train_img, config)
 

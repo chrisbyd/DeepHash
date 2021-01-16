@@ -41,11 +41,13 @@ class DHN(object):
 
         self.finetune_all = config['finetune_all']
 
-        self.file_name = 'lr_{}_cqlambda_{}_alpha_{}_dataset_{}'.format(
+        self.file_name = 'lr_{}_cqlambda_{}_alpha_{}_dataset_{}_hashbit_{}'.format(
             self.learning_rate,
             self.cq_lambda,
             self.alpha,
-            config['dataset'])
+            config['dataset'],
+            self.output_dim
+        )
         self.save_dir = config['save_dir']
         self.save_file = os.path.join(
             config['save_dir'], self.file_name + '.npy')
@@ -248,7 +250,7 @@ class DHN(object):
 
 def train(train_img, config):
     model = DHN(config)
-    img_dataset = Dataset(train_img, config['output_dim'])
+    img_dataset = Dataset(train_img, config)
     model.train(img_dataset)
     return model.save_file
 

@@ -1,17 +1,20 @@
 import numpy as np
 
 class Dataset(object):
-    def __init__(self, dataset, output_dim):
+    def __init__(self, dataset, config):
         print ("Initializing Dataset")
         self._dataset = dataset
         self.n_samples = dataset.n_samples
         self._train = dataset.train
-        self._output = np.zeros((self.n_samples, output_dim), dtype=np.float32)
+        self._output = np.zeros((self.n_samples, config['output_dim']), dtype=np.float32)
 
         self._perm = np.arange(self.n_samples)
         np.random.shuffle(self._perm)
         self._index_in_epoch = 0
         self._epochs_complete = 0
+        self.label_dim = config['label_dim']
+        self.dataset_name = config['dataset']
+        self.special_datasets = ["vehicleID","VeRi"]
         print ("Dataset already")
         return
 
@@ -42,6 +45,12 @@ class Dataset(object):
         end = self._index_in_epoch
 
         data, label = self._dataset.data(self._perm[start:end])
+
+        if self.dataset_name in self.special_datasets:
+            label = np.squeeze(label)
+
+            label = np.eye(self.label_dim)[label]
+
         return (data, label)
 
     def feed_batch_output(self, batch_size, output):
