@@ -6,8 +6,7 @@ import model.dhn.dhn as model
 import sys
 from pprint import pprint
 import os
-import os
-os.environ['KMP_DUPLICATE_LIB_OK']='True'
+
 
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
