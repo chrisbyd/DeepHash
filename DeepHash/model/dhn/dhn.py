@@ -257,6 +257,6 @@ def train(train_img, config):
 
 def validation(database_img, query_img, config):
     model = DHN(config)
-    img_database = Dataset(database_img, config['output_dim'])
-    img_query = Dataset(query_img, config['output_dim'])
+    img_database = Dataset(database_img, config)
+    img_query = Dataset(query_img, config)
     return model.validation(img_query, img_database, config['R'])
