@@ -34,7 +34,7 @@ Rs = {'cifar10': 54000, 'nuswide_81': 5000, 'coco': 5000,
 config = {
     'device': '/gpu:' + gpu,
     'max_iter': iter_num,
-    'batch_size': 256,  # TODO
+    'batch_size': 800,  # TODO
     'val_batch_size': 100,
     'decay_step': 5000,  # TODO     # Epochs after which learning rate decays.
     'learning_rate_decay_factor': 0.5,   # Learning rate decay factor.
