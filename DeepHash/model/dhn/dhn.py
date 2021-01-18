@@ -190,6 +190,7 @@ class DHN(object):
 
         for train_iter in range(self.max_iter):
             images, labels = img_dataset.next_batch(self.batch_size)
+
             start_time = time.time()
 
             _, loss, cos_loss, output, summary = self.sess.run(

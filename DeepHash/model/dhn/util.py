@@ -1,5 +1,5 @@
 import numpy as np
-
+from collections import deque
 class Dataset(object):
     def __init__(self, dataset, config):
         print ("Initializing Dataset")
@@ -9,16 +9,41 @@ class Dataset(object):
         self._output = np.zeros((self.n_samples, config['output_dim']), dtype=np.float32)
 
         self._perm = np.arange(self.n_samples)
+
         np.random.shuffle(self._perm)
         self._index_in_epoch = 0
         self._epochs_complete = 0
         self.label_dim = config['label_dim']
         self.dataset_name = config['dataset']
+        self.batch_size = config['batch_size']
+
+        self.label_to_one_hot = np.eye(self.label_dim)
         self.special_datasets = ["vehicleID","VeRi"]
         print ("Dataset already")
+        self.prefetch_num = 0
+        self._buffer = deque()
         return
 
-    def next_batch(self, batch_size):
+    def prefetch(self, prefetch_num):
+        """
+        :param prefetch_num:
+        :return: None
+        """
+        for i in range(prefetch_num):
+            self._buffer.append(self.get_batch(self.batch_size))
+
+
+
+    def next_batch(self,batch_size):
+
+         if len(self._buffer) < self.prefetch_num // 2:
+             self.prefetch(self.prefetch_num - len(self._buffer))
+         if self.prefetch_num == 0:
+             return self.get_batch(batch_size)
+         item = self._buffer.popleft()
+         return item
+
+    def get_batch(self, batch_size):
         """
         Args:
           batch_size
@@ -48,8 +73,7 @@ class Dataset(object):
 
         if self.dataset_name in self.special_datasets:
             label = np.squeeze(label)
-
-            label = np.eye(self.label_dim)[label]
+            label = self.label_to_one_hot[label]
 
         return (data, label)
 

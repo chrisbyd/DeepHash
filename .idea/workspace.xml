@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4e58ada-65d0-4e37-b7f2-296c6d268f46" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepHash/data_provider/image/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/DeepHash/data_provider/image/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DeepHash/model/dhn/dhn.py" beforeDir="false" afterPath="$PROJECT_DIR$/DeepHash/model/dhn/dhn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/dhn/train_val.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/dhn/train_val.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepHash/model/dhn/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/DeepHash/model/dhn/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_preprocess_veri.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocess_veri.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,51 +24,52 @@
           <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.2" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="md" value="1" />
-          <entry key="py" value="21" />
+          <entry key="py" value="28" />
           <entry key="sh" value="2" />
-          <entry key="txt" value="7" />
+          <entry key="txt" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bash" value="2" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="21" />
+          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="Python" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="17" />
-          <entry key="py" value="1613" />
-          <entry key="sh" value="290" />
+          <entry key="py" value="2974" />
+          <entry key="sh" value="351" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="290" />
+          <entry key="Bash" value="351" />
           <entry key="PLAIN_TEXT" value="17" />
-          <entry key="Python" value="1613" />
+          <entry key="Python" value="2974" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.83777463">
+    <splitter split-orientation="horizontal" split-proportion="0.47599453">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/examples/dhn/train_val.sh">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="456">
-                  <caret line="24" column="66" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
+                <state relative-caret-position="418">
+                  <caret line="22" column="67" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="67" />
                 </state>
               </provider>
             </entry>
@@ -75,8 +77,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/data_preprocessing.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="159">
-                  <caret line="42" selection-start-line="42" selection-end-line="42" />
+                <state relative-caret-position="342">
+                  <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -91,8 +93,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/DeepHash/model/dhn/dhn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="693">
-                  <caret line="260" column="41" selection-start-line="260" selection-start-column="41" selection-end-line="260" selection-end-column="41" />
+                <state relative-caret-position="321">
+                  <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
                   <folding>
                     <element signature="e#415#424#0" expanded="true" />
                   </folding>
@@ -101,30 +103,35 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/DeepHash/model/dhn/util.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="554">
-                  <caret line="50" selection-start-line="50" selection-end-line="50" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="799">
+                <state relative-caret-position="2052">
                   <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/examples/dhn/train_val_script.py">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/DeepHash/model/dhn/util.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="683">
-                  <caret line="72" column="19" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
+                <state relative-caret-position="95">
+                  <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
+                    <marker date="1610975162727" expanded="true" signature="1120:1392" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/DeepHash/data_provider/image/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="203">
+                  <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+                  <folding>
+                    <marker date="1610972761463" expanded="true" signature="1732:2043" ph="..." />
+                    <marker date="1610972761463" expanded="true" signature="2064:2077" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -146,6 +153,8 @@
       <find>max</find>
       <find>load_model</find>
       <find>load</find>
+      <find>_output</find>
+      <find>feed_batch_output</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,16 +163,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DeepHash/data_provider/image/__init__.py" />
         <option value="$PROJECT_DIR$/DeepHash/evaluation/load_and_predict.py" />
         <option value="$PROJECT_DIR$/DeepHash/evaluation/__init__.py" />
         <option value="$PROJECT_DIR$/data_preprocessing.py" />
         <option value="$PROJECT_DIR$/examples/dqn/train_val_script.py" />
-        <option value="$PROJECT_DIR$/examples/dhn/train_val_script.py" />
-        <option value="$PROJECT_DIR$/DeepHash/model/dhn/util.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/data_preprocess_veri.py" />
         <option value="$PROJECT_DIR$/DeepHash/model/dhn/dhn.py" />
+        <option value="$PROJECT_DIR$/DeepHash/data_provider/image/__init__.py" />
+        <option value="$PROJECT_DIR$/examples/dhn/train_val_script.py" />
         <option value="$PROJECT_DIR$/examples/dhn/train_val.sh" />
+        <option value="$PROJECT_DIR$/DeepHash/model/dhn/util.py" />
       </list>
     </option>
   </component>
@@ -198,12 +208,19 @@
             <path>
               <item name="DeepHash" type="b2602c69:ProjectViewProjectNode" />
               <item name="DeepHash" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="DeepHash" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DeepHash" type="b2602c69:ProjectViewProjectNode" />
               <item name="DeepHash" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="DeepHash" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DeepHash" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DeepHash" type="462c0819:PsiDirectoryNode" />
+              <item name="DeepHash" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="dhn" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -253,7 +270,7 @@
     <frame x="67" y="25" width="2493" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12371979" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10405572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -267,7 +284,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.29231974" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.4169279" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -325,9 +342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/cifar10/train.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/database_800.txt" />
     <entry file="file://$PROJECT_DIR$/database_2400.txt" />
     <entry file="file://$PROJECT_DIR$/train.txt" />
@@ -338,9 +352,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="957">
           <caret line="156" column="19" selection-start-line="156" selection-start-column="19" selection-end-line="156" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -361,20 +372,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/examples/dqn/train_val.sh">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DeepHash/data_provider/image/__init__.py">
+    <entry file="file://$PROJECT_DIR$/data_preprocess_veri.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-430">
-          <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+        <state relative-caret-position="131">
+          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -382,33 +386,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DeepHash/data_provider/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/dqn/train_val.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DeepHash/model/dhn/util.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="2052">
+          <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/data/cifar10/train.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-990353627/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
+        <state relative-caret-position="267">
+          <caret line="3598" column="8" selection-start-line="3598" selection-start-column="8" selection-end-line="3598" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/dhn/train_val.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="67" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DeepHash/model/dhn/dhn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="260" column="41" selection-start-line="260" selection-start-column="41" selection-end-line="260" selection-end-column="41" />
+        <state relative-caret-position="321">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
           <folding>
             <element signature="e#415#424#0" expanded="true" />
           </folding>
@@ -417,18 +438,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/dhn/train_val_script.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="72" column="19" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
+        <state relative-caret-position="380">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/dhn/train_val.sh">
+    <entry file="file://$PROJECT_DIR$/DeepHash/model/dhn/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="66" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
+        <state relative-caret-position="95">
+          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1610975162727" expanded="true" signature="1120:1392" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DeepHash/data_provider/image/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+          <folding>
+            <marker date="1610972761463" expanded="true" signature="1732:2043" ph="..." />
+            <marker date="1610972761463" expanded="true" signature="2064:2077" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
