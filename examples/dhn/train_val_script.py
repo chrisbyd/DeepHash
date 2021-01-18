@@ -71,7 +71,7 @@ model_weights = model.train(train_img, config)
 
 config['model_weights'] = model_weights
 query_img, database_img = dataset.import_validation(data_root, config['img_te'], config['img_db'])
-maps = model.validation(database_img, query_img, config)
-for key in maps:
-    print(("{}: {}".format(key, maps[key])))
+# maps = model.validation(database_img, query_img, config)
+# for key in maps:
+#     print(("{}: {}".format(key, maps[key])))
 pprint(config)
