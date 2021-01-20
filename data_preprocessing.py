@@ -52,17 +52,20 @@ for item in ['800','1600','2400','3200']:
             name, pid = data_item.split(" ")
             pid = int(pid)
             pid_dic[pid].append((name,pid))
-            pid_list.append(pid)
 
+    pid_list = list(pid_dic.keys())
     label_dict = convert_pid_to_label(pid_list)
     query_list = []
     gallery_list = []
+    a = 0
+
     for pid in pid_list:
         name_list = pid_dic[pid]
         name_for_gallery = random.choice(name_list)
         gallery_list.append(name_for_gallery)
         name_list.remove(name_for_gallery)
         query_list.extend(name_list)
+
 
     with open(osp.join(img_dir_root,'test_'+item+'.txt'),'w') as f_test:
         for name, pid in query_list:

@@ -65,13 +65,16 @@ config = {
 }
 
 pprint(config)
-print(os.getcwd())
-train_img = dataset.import_train(data_root, config['img_tr'])
-model_weights = model.train(train_img, config)
-
-config['model_weights'] = model_weights
+# print(os.getcwd())
+# train_img = dataset.import_train(data_root, config['img_tr'])
+# model_weights = model.train(train_img, config)
+#
+# config['model_weights'] = model_weights
+#config['model_weights'] ='./models/lr_5e-05_cqlambda_0.0_alpha_10.0_dataset_vehicleID_hashbit_512.npy'
 query_img, database_img = dataset.import_validation(data_root, config['img_te'], config['img_db'])
-# maps = model.validation(database_img, query_img, config)
+cmc, mAP = model.validation(database_img, query_img, config)
+print("The cmc: Rank1:{}, Rank5:{}, Rank10:{} and the mAP is {}".format(cmc[0],cmc[4],cmc[9],mAP))
+
 # for key in maps:
 #     print(("{}: {}".format(key, maps[key])))
 pprint(config)

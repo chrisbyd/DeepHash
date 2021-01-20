@@ -12,12 +12,12 @@ from math import ceil
 
 import numpy as np
 import tensorflow as tf
-
+from tqdm import tqdm
 from architecture import img_alexnet_layers
 from evaluation import MAPs
 from .util import Dataset
-
-
+from evaluation import get_mAPs_and_cmcs
+import sys
 class DHN(object):
     def __init__(self, config):
         # Initialize setting
@@ -32,6 +32,7 @@ class DHN(object):
 
         self.batch_size = config['batch_size']
         self.val_batch_size = config['val_batch_size']
+
         self.max_iter = config['max_iter']
         self.img_model = config['img_model']
         self.loss_type = config['loss_type']
@@ -188,15 +189,18 @@ class DHN(object):
             shutil.rmtree(tflog_path)
         train_writer = tf.summary.FileWriter(tflog_path, self.sess.graph)
 
-        for train_iter in range(self.max_iter):
+        for train_iter in tqdm(range(self.max_iter)):
             images, labels = img_dataset.next_batch(self.batch_size)
 
             start_time = time.time()
+
 
             _, loss, cos_loss, output, summary = self.sess.run(
                 [self.train_op, self.loss, self.cos_loss, self.img_last_layer, self.merged],
                 feed_dict={self.img: images,
                            self.img_label: labels})
+            print("the output has dimension {}\n".format(output.shape))
+            print("the output occupies {} bytes".format(output.nbytes))
             train_writer.add_summary(summary, train_iter)
 
             img_dataset.feed_batch_output(self.batch_size, output)
@@ -212,42 +216,47 @@ class DHN(object):
 
         self.sess.close()
 
-    def validation(self, img_query, img_database, R=100):
+    def validation(self, img_query, img_database, config):
         print("%s #validation# start validation" % (datetime.now()))
         query_batch = int(ceil(img_query.n_samples / self.val_batch_size))
         print("%s #validation# totally %d query in %d batches" % (datetime.now(), img_query.n_samples, query_batch))
-        for i in range(query_batch):
+        for _ in tqdm(range(query_batch)):
             images, labels = img_query.next_batch(self.val_batch_size)
             output, loss = self.sess.run([self.img_last_layer, self.cos_loss],
                                          feed_dict={self.img: images, self.img_label: labels, self.stage: 1})
+
             img_query.feed_batch_output(self.val_batch_size, output)
-            print('Cosine Loss: %s' % loss)
+           # print('Cosine Loss: %s' % loss)
 
         database_batch = int(ceil(img_database.n_samples / self.val_batch_size))
         print("%s #validation# totally %d database in %d batches" %
               (datetime.now(), img_database.n_samples, database_batch))
-        for i in range(database_batch):
+        for i in tqdm(range(database_batch)):
             images, labels = img_database.next_batch(self.val_batch_size)
 
             output, loss = self.sess.run([self.img_last_layer, self.cos_loss],
                                          feed_dict={self.img: images, self.img_label: labels, self.stage: 1})
+
             img_database.feed_batch_output(self.val_batch_size, output)
             # print output[:10, :10]
-            if i % 100 == 0:
-                print('Cosine Loss[%d/%d]: %s' % (i, database_batch, loss))
+            # if i % 100 == 0:
+            #     print('Cosine Loss[%d/%d]: %s' % (i, database_batch, loss))
 
-        mAPs = MAPs(R)
+        #mAPs = MAPs(R)
+        cmc, mAP = get_mAPs_and_cmcs(img_database,img_query,config=config)
+        print('The cmc: Rank1:{}, Rank5:{}, Rank10:{}; ,mAP is {}'.format(cmc[0],cmc[4], cmc[9],mAP))
+        return cmc, mAP
 
-        self.sess.close()
-        prec, rec, mmap = mAPs.get_precision_recall_by_Hamming_Radius(img_database, img_query, 2)
-        return {
-            'i2i_by_feature': mAPs.get_mAPs_by_feature(img_database, img_query),
-            'i2i_after_sign': mAPs.get_mAPs_after_sign(img_database, img_query),
-            'i2i_prec_radius_2': prec,
-            'i2i_recall_radius_2': rec,
-            'i2i_map_radius_2': mmap
-        }
-
+        #
+        # self.sess.close()
+        # prec, rec, mmap = mAPs.get_precision_recall_by_Hamming_Radius(img_database, img_query, 2)
+        # return {
+        #     'i2i_by_feature': mAPs.get_mAPs_by_feature(img_database, img_query),
+        #     'i2i_after_sign': mAPs.get_mAPs_after_sign(img_database, img_query),
+        #     'i2i_prec_radius_2': prec,
+        #     'i2i_recall_radius_2': rec,
+        #     'i2i_map_radius_2': mmap
+        # }
 
 def train(train_img, config):
     model = DHN(config)
@@ -260,4 +269,4 @@ def validation(database_img, query_img, config):
     model = DHN(config)
     img_database = Dataset(database_img, config)
     img_query = Dataset(query_img, config)
-    return model.validation(img_query, img_database, config['R'])
+    return model.validation(img_query, img_database, config)

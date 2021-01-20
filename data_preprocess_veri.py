@@ -7,8 +7,8 @@ import os
 img_dir_root = './data/VeRi'
 train_list_dir = osp.join(img_dir_root,'train_test_split')
 train_img_path = osp.join(img_dir_root,'image_train')
-test_img_path = osp.join(img_dir_root,'image_test')
-database_img_path = osp.join(img_dir_root,'image_query')
+test_img_path = osp.join(img_dir_root,'image_query')
+database_img_path = osp.join(img_dir_root,'image_test')
 
 img_data_list = []
 pid_set = set()
@@ -44,7 +44,7 @@ pid2label = {pid: label for label, pid in enumerate(pid_set)}
 
 with open(test_text_path,'w') as f:
     for fname, pid, camid in img_data_list:
-        img_path = osp.join('image_test',fname)
+        img_path = osp.join('image_query',fname)
         label = pid2label[pid]
         f.write(img_path+' '+str(label)+ ' '+str(camid)+' '+'\n')
 
@@ -61,8 +61,9 @@ pid2label = {pid: label for label, pid in enumerate(pid_set)}
 
 with open(database_text_path,'w') as f:
     for fname, pid, camid in img_data_list:
-        img_path = osp.join('image_query',fname)
+        img_path = osp.join('image_test',fname)
         label = pid2label[pid]
+
         f.write(img_path+' '+str(label)+ ' '+str(camid)+' '+'\n')
 
 

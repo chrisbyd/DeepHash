@@ -18,7 +18,7 @@ export TF_CPP_MIN_LOG_LEVEL=3
 echo "Starting training hash bit 256"
 CUDA_VISIBLE_DEVICES=$gpu python train_val_script.py      $lr 256     10000    $q_lambda  $alpha   $dataset    0   $log_dir  ../../data/vehicleID  $test_mode
 #echo "Starting training hash bit 512"
-#CUDA_VISIBLE_DEVICES=$gpu python train_val_script.py      $lr 512     200000    $q_lambda  $alpha   $dataset    0   $log_dir  ../../data/vehicleID  $test_mode
+#CUDA_VISIBLE_DEVICES=$gpu python train_val_script.py      $lr 512     10000    $q_lambda  $alpha   $dataset    0   $log_dir  ../../data/vehicleID  $test_mode
 #echo "Star training 1024"
 #CUDA_VISIBLE_DEVICES=$gpu python train_val_script.py      $lr 1024     200000    $q_lambda  $alpha   $dataset    0   $log_dir  ../../data/vehicleID  $test_mode
 #echo "Start training 2048"

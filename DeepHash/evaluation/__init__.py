@@ -1,7 +1,31 @@
 import numpy as np
-
+from .evaluate_vehicleid import eval_vehicleid
+from .evaluate_veri import eval_veri
 from distance.npversion import distance
 from util import sign
+import time
+
+def get_mAPs_and_cmcs(database, query,config):
+    query_output = sign(query.output)
+    gallery_output = sign(database.output)
+   # time.sleep(20)
+    query_labels = np.squeeze( query.label)
+    #print("The query_labels has shape", query_labels.shape)
+    gallery_labels = np.squeeze( database.label)
+  #  print("Starting computing the hamming distance")
+    dist = distance(query_output, gallery_output,dist_type='inner_product', pair=True)
+ #   print("The size of the dist is {} bytes".format(dist.nbytes))
+   # print("End of computing the distance. Begining to evaluate")
+ #   print(config['dataset'])
+    if config['dataset'] == 'vehicleID':
+        print("Beigin to evaluate vehicleid")
+        all_cmc, mAP = eval_vehicleid(dist,query_labels,gallery_labels,None,None,50)
+        print("end of evaluating vehicleid")
+    elif config['dataset'] == 'VeRi':
+        query_cams = query.cam
+        gallery_cams = database.cam
+        all_cmc, mAP = eval_veri(dist,query_labels,gallery_labels,query_cams,gallery_cams,50)
+    return all_cmc, mAP
 
 
 # optimized

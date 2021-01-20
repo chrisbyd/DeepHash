@@ -38,6 +38,7 @@ class Dataset(object):
         self._img = [0] * self.n_samples
         self._label = [0] * self.n_samples
         self._load = [0] * self.n_samples
+        self._cam = [0] * self.n_samples
         self._load_num = 0
         self._status = 0
         self.data = self.img_data
@@ -63,7 +64,7 @@ class Dataset(object):
         return cv2.resize(cv2.imread(path), (256, 256))
 
     def get_label(self, i):
-        return [int(j) for j in self.lines[i].strip().split()[1:]]
+        return [int(j) for j in self.lines[i].strip().split()[1:2]]
 
     def img_data(self, indexes):
         if self._status:
@@ -79,8 +80,6 @@ class Dataset(object):
                             # self._label[i] = self.get_label(i)
                             # self._load[i] = 1
                             # self._load_num += 1
-                        # ret_img.append(self._img[i])
-                        # ret_label.append(self._label[i])
                         ret_img.append(self.get_img(i))
                         ret_label.append(self.get_label(i))
                     else:
@@ -104,9 +103,14 @@ class Dataset(object):
     def get_labels(self):
         for i in range(self.n_samples):
             if self._label[i] is not list:
-                self._label[i] = [int(j)
-                                  for j in self.lines[i].strip().split()[1:]]
+                self._label[i] = self.lines[i].strip().split()[1:2]
         return np.asarray(self._label)
+
+    def get_cams(self):
+        for i in range(self.n_samples):
+            self._cam[i] = self.lines[i].strip().split()[2:3]
+        return np.asarray(self._cam)
+
 
 
 def import_train(data_root, img_tr):

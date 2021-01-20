@@ -22,6 +22,7 @@ class Dataset(object):
         print ("Dataset already")
         self.prefetch_num = 0
         self._buffer = deque()
+
         return
 
     def prefetch(self, prefetch_num):
@@ -73,6 +74,7 @@ class Dataset(object):
 
         if self.dataset_name in self.special_datasets:
             label = np.squeeze(label)
+
             label = self.label_to_one_hot[label]
 
         return (data, label)
@@ -90,6 +92,10 @@ class Dataset(object):
     @property
     def label(self):
         return self._dataset.get_labels()
+
+    @property
+    def cam(self):
+        return self._dataset.get_cams()
 
     def finish_epoch(self):
         self._index_in_epoch = 0
