@@ -57,8 +57,8 @@ config = {
 
     'label_dim': label_dims[_dataset],
     'img_tr': "../../data/{}/train.txt".format(_dataset),
-    'img_te': "../../data/{}/test_{}.txt".format(_dataset,test_mode),
-    'img_db': "../../data/{}/database_{}.txt".format(_dataset,test_mode),
+    'img_te': "../../data/{}/test.txt".format(_dataset),
+    'img_db': "../../data/{}/database.txt".format(_dataset),
     'save_dir': "./models/",
     'log_dir': log_dir,
     'dataset': _dataset
