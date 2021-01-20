@@ -6,9 +6,9 @@
  'decay_step': 5000,
  'device': '/gpu:0',
  'finetune_all': True,
- 'img_db': '../../data/VeRi/database_800.txt',
+ 'img_db': '../../data/VeRi/database.txt',
  'img_model': 'alexnet',
- 'img_te': '../../data/VeRi/test_800.txt',
+ 'img_te': '../../data/VeRi/test.txt',
  'img_tr': '../../data/VeRi/train.txt',
  'label_dim': 576,
  'learning_rate': 5e-05,
@@ -20,3 +20,15 @@
  'output_dim': 256,
  'save_dir': './models/',
  'val_batch_size': 100}
+initializing
+launching session
+loading img model from ../../architecture/pretrained_model/reference_pretrain.npy
+['hash_layer', 'fc6', 'fc7', 'conv3', 'conv2', 'conv1', 'conv5', 'conv4']
+img model loading finished
+Initializing Dataset
+Dataset already
+Initializing Dataset
+Dataset already
+2021-01-20 20:49:32.063386 #validation# start validation
+2021-01-20 20:49:32.063405 #validation# totally 1678 query in 17 batches
+2021-01-20 20:49:47.878009 #validation# totally 11579 database in 116 batches
