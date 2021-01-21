@@ -12,7 +12,7 @@ from math import ceil
 
 import numpy as np
 import tensorflow as tf
-
+from tqdm import tqdm
 import model.plot as plot
 from architecture import img_alexnet_layers
 from evaluation import MAPs
@@ -180,10 +180,11 @@ class DCH(object):
             shutil.rmtree(tflog_path)
         train_writer = tf.summary.FileWriter(tflog_path, self.sess.graph)
 
-        for train_iter in range(self.iter_num):
+        for train_iter in tqdm(range(self.iter_num)):
             images, labels = img_dataset.next_batch(self.batch_size)
             start_time = time.time()
-
+            print('The label has shape', labels.shape)
+            print('The images has shape', images.shape)
             _, loss, cos_loss, output, summary = self.sess.run([self.train_op, self.loss, self.cos_loss, self.img_last_layer, self.merged],
                                     feed_dict={self.img: images,
                                                self.img_label: labels})
@@ -193,7 +194,7 @@ class DCH(object):
             img_dataset.feed_batch_output(self.batch_size, output)
             duration = time.time() - start_time
 
-            if train_iter % 100 == 0:
+            if train_iter % 10 == 0:
                 print("%s #train# step %4d, loss = %.4f, cross_entropy loss = %.4f, %.1f sec/batch"
                         %(datetime.now(), train_iter+1, loss, cos_loss, duration))
 
