@@ -1,0 +1,111 @@
+{'R': 50,
+ 'alpha': 0.5,
+ 'batch_size': 800,
+ 'bias': 0.0,
+ 'data_dir': '../../data/',
+ 'dataset': 'VeRi',
+ 'decay_factor': 0.1,
+ 'decay_step': 10000,
+ 'evaluate': False,
+ 'finetune_all': True,
+ 'gamma': 20,
+ 'gpus': '0',
+ 'img_db': '../../data/VeRi/database.txt',
+ 'img_model': 'alexnet',
+ 'img_te': '../../data/VeRi/test.txt',
+ 'img_tr': '../../data/VeRi/train.txt',
+ 'iter_num': 20,
+ 'label_dim': 576,
+ 'log_dir': 'tflog',
+ 'lr': 0.005,
+ 'model_weights': '../../architecture/pretrained_model/reference_pretrain.npy',
+ 'output_dim': 256,
+ 'q_lambda': 0,
+ 'save_dir': './models/',
+ 'test_mode': '800',
+ 'val_batch_size': 16,
+ 'with_tanh': True}
+initializing
+launching session
+loading img model from ../../architecture/pretrained_model/reference_pretrain.npy
+['hash_layer', 'fc6', 'fc7', 'conv3', 'conv2', 'conv1', 'conv5', 'conv4']
+img model loading finished
+Initializing Dataset
+Dataset already
+Initializing Dataset
+Dataset already
+Initializing Dataset
+Dataset already
+2021-01-21 23:06:45.899081 #train# start training
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+2021-01-21 23:07:01.020063 #train# step    1, loss = 1.5381, cross_entropy loss = 1.5381, 10.8 sec/batch
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+2021-01-21 23:07:16.675981 #train# step   11, loss = 1.1234, cross_entropy loss = 1.1234, 0.8 sec/batch
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+The label has shape (800, 576)
+The images has shape (800, 256, 256, 3)
+2021-01-21 23:07:30.915218 #traing# finish training
+saving model to ./models/lr_0.005_cqlambda_0_alpha_0.5_bias_0.0_gamma_20_dataset_VeRi_hashbit_256.npy
+model saved
+{'R': 50,
+ 'alpha': 0.5,
+ 'batch_size': 800,
+ 'bias': 0.0,
+ 'data_dir': '../../data/',
+ 'dataset': 'VeRi',
+ 'decay_factor': 0.1,
+ 'decay_step': 10000,
+ 'evaluate': False,
+ 'finetune_all': True,
+ 'gamma': 20,
+ 'gpus': '0',
+ 'img_db': '../../data/VeRi/database.txt',
+ 'img_model': 'alexnet',
+ 'img_te': '../../data/VeRi/test.txt',
+ 'img_tr': '../../data/VeRi/train.txt',
+ 'iter_num': 20,
+ 'label_dim': 576,
+ 'log_dir': 'tflog',
+ 'lr': 0.005,
+ 'model_weights': './models/lr_0.005_cqlambda_0_alpha_0.5_bias_0.0_gamma_20_dataset_VeRi_hashbit_256.npy',
+ 'output_dim': 256,
+ 'q_lambda': 0,
+ 'save_dir': './models/',
+ 'test_mode': '800',
+ 'val_batch_size': 16,
+ 'with_tanh': True}

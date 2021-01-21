@@ -24,19 +24,22 @@ class DCH(object):
         print ("initializing")
         np.set_printoptions(precision=4)
 
+        self.output_dim = config.output_dim
+
         with tf.name_scope('stage'):
             # 0 for training, 1 for validation
             self.stage = tf.placeholder_with_default(tf.constant(0), [])
         for k, v in vars(config).items():
             setattr(self, k, v)
-        self.file_name = 'lr_{}_cqlambda_{}_alpha_{}_bias_{}_gamma_{}_dataset_{}'.format(
+        self.file_name = 'lr_{}_cqlambda_{}_alpha_{}_bias_{}_gamma_{}_dataset_{}_hashbit_{}'.format(
                 self.lr,
                 self.q_lambda,
                 self.alpha,
                 self.bias,
                 self.gamma,
-                self.dataset)
-        self.save_file = os.path.join(self.save_dir, self.file_name + '.npy')
+                self.dataset,
+                self.output_dim)
+        self.save_file = os.path.join(self.save_dir, self.file_name  +'.npy')
 
         ### Setup session
         print ("launching session")
