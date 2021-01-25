@@ -3,7 +3,7 @@
 lr=0.002
 q_lambda=0.0001
 subspace_num=4
-dataset=cifar10 # cifar10, nuswide_81
+dataset=VeRi # cifar10, nuswide_81, vehicleID, VeRi
 log_dir=tflog
 
 if [ -z "$1" ]; then
@@ -16,4 +16,11 @@ filename="lr_${lr}_cqlambda_${q_lambda}_subspace_num_${subspace_num}_T_${T}_K_${
 model_file="models/${filename}.npy"
 export TF_CPP_MIN_LOG_LEVEL=3
 #                                                          lr  output  iter    q_lamb      n_sub   dataset     gpu    log_dir
-CUDA_VISIBLE_DEVICES=$gpu python train_val_script.py      $lr 300     5000    $q_lambda   4       $dataset    0 $log_dir /dir/to/dataset/root/
+CUDA_VISIBLE_DEVICES=$gpu python train_val_script.py      $lr 256     8000    $q_lambda   4       $dataset    0 $log_dir ../../data/VeRi | tee >VeRi_256.txt
+#                                                          lr  output  iter    q_lamb      n_sub   dataset     gpu    log_dir
+echo "Start training 512"
+CUDA_VISIBLE_DEVICES=$gpu python train_val_script.py      $lr 512     8000    $q_lambda   4       $dataset    0 $log_dir ../../data/VeRi | tee >VeRi_512.txt
+echo "Start training 1024"
+CUDA_VISIBLE_DEVICES=$gpu python train_val_script.py      $lr 1024     8000    $q_lambda   4       $dataset    0 $log_dir ../../data/VeRi | tee >VeRi_1024.txt
+echo "Start training 2048"
+CUDA_VISIBLE_DEVICES=$gpu python train_val_script.py      $lr 2048     8000    $q_lambda   4       $dataset    0 $log_dir ../../data/VeRi | tee >VeRi_2048.txt

@@ -18,6 +18,7 @@ from sklearn.cluster import MiniBatchKMeans
 from architecture import img_alexnet_layers
 from evaluation import MAPs_CQ
 from .util import Dataset
+from tqdm import tqdm
 
 
 class DQN(object):
@@ -47,11 +48,12 @@ class DQN(object):
 
         self.finetune_all = config['finetune_all']
 
-        self.file_name = 'lr_{}_cqlambda_{}_subspace_num_{}_dataset_{}'.format(
+        self.file_name = 'lr_{}_cqlambda_{}_subspace_num_{}_dataset_{}_hashbit_{}'.format(
             self.learning_rate,
             self.cq_lambda,
             self.subspace_num,
-            config['dataset'])
+            config['dataset'],
+            self.output_dim)
         self.save_dir = os.path.join(
             config['save_dir'], self.file_name + '.npy')
         self.log_dir = config['log_dir']
@@ -302,7 +304,7 @@ class DQN(object):
             shutil.rmtree(tflog_path)
         train_writer = tf.summary.FileWriter(tflog_path, self.sess.graph)
 
-        for train_iter in range(self.max_iter):
+        for train_iter in tqdm(range(self.max_iter)):
             images, labels, codes = img_dataset.next_batch(self.batch_size)
             start_time = time.time()
 
@@ -384,7 +386,7 @@ class DQN(object):
 def train(train_img, config):
     model = DQN(config)
     img_dataset = Dataset(
-        train_img, config['output_dim'], config['n_subspace'] * config['n_subcenter'])
+        train_img, config['output_dim'], config['n_subspace'] * config['n_subcenter'],config)
     model.train(img_dataset)
     return model.save_dir
 
@@ -392,7 +394,7 @@ def train(train_img, config):
 def validation(database_img, query_img, config):
     model = DQN(config)
     img_database = Dataset(
-        database_img, config['output_dim'], config['n_subspace'] * config['n_subcenter'])
+        database_img, config['output_dim'], config['n_subspace'] * config['n_subcenter'],config)
     img_query = Dataset(
-        query_img, config['output_dim'], config['n_subspace'] * config['n_subcenter'])
+        query_img, config['output_dim'], config['n_subspace'] * config['n_subcenter'],config)
     return model.validation(img_query, img_database, config['R'])

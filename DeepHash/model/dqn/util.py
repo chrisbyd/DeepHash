@@ -1,7 +1,7 @@
 import numpy as np
 
 class Dataset(object):
-    def __init__(self, dataset, output_dim, code_dim):
+    def __init__(self, dataset, output_dim, code_dim,config):
         print ("Initializing Dataset")
         self._dataset = dataset
         self.n_samples = dataset.n_samples
@@ -13,6 +13,9 @@ class Dataset(object):
         np.random.shuffle(self._perm)
         self._index_in_epoch = 0
         self._epochs_complete = 0
+        self.label_dim = config['label_dim']
+        self.dataset_name = config['dataset']
+        self.label_to_one_hot = np.eye(self.label_dim)
         print ("Dataset already")
         return
 
@@ -43,6 +46,13 @@ class Dataset(object):
         end = self._index_in_epoch
 
         data, label = self._dataset.data(self._perm[start:end])
+        # print("data dim is",data.shape)
+        # print("label has dim", label.shape)
+
+        if self.dataset_name in ["vehicleID","VeRi"]:
+            label = np.squeeze(label)
+            label = self.label_to_one_hot[label]
+
         return (data, label, self.codes[self._perm[start: end], :])
 
     def next_batch_output_codes(self, batch_size):
