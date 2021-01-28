@@ -12,7 +12,7 @@ from sklearn.cluster import MiniBatchKMeans
 from architecture import img_alexnet_layers
 from distance.tfversion import distance
 from evaluation import MAPs_CQ
-
+from tqdm import tqdm
 
 class DTQ(object):
     def __init__(self, config):
@@ -320,7 +320,7 @@ class DTQ(object):
     def train_cq(self, img_dataset, img_query, img_database, R):
         print("%s #train# start training" % datetime.now())
 
-        # tensorboard
+        # tensorboardｓ
         tflog_path = os.path.join(self.log_dir, self.file_name)
         if os.path.exists(tflog_path):
             shutil.rmtree(tflog_path)
@@ -337,11 +337,11 @@ class DTQ(object):
         self.update_codes_and_centers(img_dataset)
 
         train_iter = 0
-        for epoch in range(self.max_epoch):
+        for epoch in tqdm(range(self.max_epoch)):
             triplet_batch_size = int(self.batch_size / 3)
             epoch_iter = int(img_dataset.triplets.shape[0] / triplet_batch_size)
             img_dataset.finish_epoch()
-            for i in range(epoch_iter):
+            for i in tqdm(range(epoch_iter)):
                 start_time = time.time()
                 images, labels, codes = img_dataset.next_batch_triplet(triplet_batch_size)
                 _, output, loss, summary = self.sess.run(
@@ -380,6 +380,7 @@ class DTQ(object):
         self.sess.close()
 
     def val_forward(self, img_dataset, val_print_freq=100):
+
         batch = int(ceil(img_dataset.n_samples / float(self.val_batch_size)))
         img_dataset.finish_epoch()
         for i in range(batch):

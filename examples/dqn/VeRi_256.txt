@@ -14,7 +14,7 @@
  'learning_rate': 0.002,
  'learning_rate_decay_factor': 0.5,
  'log_dir': 'tflog',
- 'max_iter': 8,
+ 'max_iter': 8000,
  'max_iter_update_Cb': 1,
  'max_iter_update_b': 3,
  'model_weights': '../../architecture/pretrained_model/reference_pretrain.npy',
@@ -30,8 +30,582 @@ loading img model from ../../architecture/pretrained_model/reference_pretrain.np
 img model loading finished
 Initializing Dataset
 Dataset already
-2021-01-25 16:33:06.307578 #train# start training
-2021-01-25 16:33:24.361352 #train# step    1, loss = 1.4153, 13.3 sec/batch
-2021-01-25 16:33:40.593622 #traing# finish training
+2021-01-25 17:17:54.446770 #train# start training
+2021-01-25 17:18:12.626885 #train# step    1, loss = 1.4137, 13.5 sec/batch
+2021-01-25 17:20:07.807279 #train# step   51, loss = 1.0110, 1.5 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:22:28.292980 #train# step  101, loss = 1.0160, 1.6 sec/batch
+2021-01-25 17:24:24.532351 #train# step  151, loss = 1.0145, 1.6 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:26:35.799038 #train# step  201, loss = 1.0148, 0.8 sec/batch
+2021-01-25 17:27:55.044044 #train# step  251, loss = 1.0127, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:29:37.435717 #train# step  301, loss = 1.0129, 0.8 sec/batch
+2021-01-25 17:30:57.246546 #train# step  351, loss = 1.0115, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:32:34.725826 #train# step  401, loss = 1.0102, 0.8 sec/batch
+2021-01-25 17:33:53.913446 #train# step  451, loss = 1.0094, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:35:30.562034 #train# step  501, loss = 1.0087, 0.8 sec/batch
+2021-01-25 17:36:49.662720 #train# step  551, loss = 1.0082, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:38:19.512864 #train# step  601, loss = 1.0067, 0.8 sec/batch
+2021-01-25 17:39:38.442700 #train# step  651, loss = 1.0069, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:41:07.568174 #train# step  701, loss = 1.0067, 0.8 sec/batch
+2021-01-25 17:42:26.574269 #train# step  751, loss = 1.0064, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:44:00.632366 #train# step  801, loss = 1.0065, 0.8 sec/batch
+2021-01-25 17:45:19.817911 #train# step  851, loss = 1.0061, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:46:46.668492 #train# step  901, loss = 1.0062, 0.8 sec/batch
+2021-01-25 17:48:06.162352 #train# step  951, loss = 1.0053, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:49:34.478401 #train# step 1001, loss = 1.0056, 0.8 sec/batch
+2021-01-25 17:50:53.561218 #train# step 1051, loss = 1.0057, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:52:25.662679 #train# step 1101, loss = 1.0055, 0.8 sec/batch
+2021-01-25 17:53:44.517224 #train# step 1151, loss = 1.0052, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:55:10.667703 #train# step 1201, loss = 1.0052, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:56:42.907817 #train# step 1251, loss = 1.0050, 0.9 sec/batch
+2021-01-25 17:58:10.233835 #train# step 1301, loss = 1.0052, 0.9 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 17:59:44.106101 #train# step 1351, loss = 1.0045, 0.8 sec/batch
+2021-01-25 18:01:04.006375 #train# step 1401, loss = 1.0048, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:02:34.841510 #train# step 1451, loss = 1.0048, 0.8 sec/batch
+2021-01-25 18:03:54.493966 #train# step 1501, loss = 1.0048, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:05:27.187523 #train# step 1551, loss = 1.0046, 0.8 sec/batch
+2021-01-25 18:06:47.199529 #train# step 1601, loss = 1.0045, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:08:19.215085 #train# step 1651, loss = 1.0046, 0.8 sec/batch
+2021-01-25 18:09:39.691366 #train# step 1701, loss = 1.0045, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:11:09.839161 #train# step 1751, loss = 1.0049, 0.9 sec/batch
+2021-01-25 18:12:34.390079 #train# step 1801, loss = 1.0045, 0.9 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:14:07.256105 #train# step 1851, loss = 1.0039, 0.9 sec/batch
+2021-01-25 18:15:30.281267 #train# step 1901, loss = 1.0049, 0.9 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:17:09.073381 #train# step 1951, loss = 1.0047, 0.9 sec/batch
+2021-01-25 18:18:34.645818 #train# step 2001, loss = 1.0046, 0.9 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:20:14.894395 #train# step 2051, loss = 1.0050, 0.9 sec/batch
+2021-01-25 18:21:40.043264 #train# step 2101, loss = 1.0046, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:23:11.559420 #train# step 2151, loss = 1.0043, 0.8 sec/batch
+2021-01-25 18:24:31.532681 #train# step 2201, loss = 1.0044, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:25:59.730448 #train# step 2251, loss = 1.0045, 0.8 sec/batch
+2021-01-25 18:27:18.470687 #train# step 2301, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:28:47.379882 #train# step 2351, loss = 1.0044, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:30:17.485014 #train# step 2401, loss = 1.0044, 0.8 sec/batch
+2021-01-25 18:31:38.687798 #train# step 2451, loss = 1.0047, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:33:08.350992 #train# step 2501, loss = 1.0044, 0.8 sec/batch
+2021-01-25 18:34:27.782870 #train# step 2551, loss = 1.0044, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:35:54.446721 #train# step 2601, loss = 1.0043, 0.8 sec/batch
+2021-01-25 18:37:13.764899 #train# step 2651, loss = 1.0040, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:38:44.642443 #train# step 2701, loss = 1.0041, 0.8 sec/batch
+2021-01-25 18:40:03.592109 #train# step 2751, loss = 1.0043, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:41:30.702418 #train# step 2801, loss = 1.0044, 0.8 sec/batch
+2021-01-25 18:42:49.956187 #train# step 2851, loss = 1.0051, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:44:25.365537 #train# step 2901, loss = 1.0046, 0.8 sec/batch
+2021-01-25 18:45:44.123000 #train# step 2951, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:47:12.379909 #train# step 3001, loss = 1.0045, 0.8 sec/batch
+2021-01-25 18:48:31.109488 #train# step 3051, loss = 1.0047, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:50:00.444073 #train# step 3101, loss = 1.0040, 0.8 sec/batch
+2021-01-25 18:51:19.118723 #train# step 3151, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:52:51.687788 #train# step 3201, loss = 1.0046, 0.8 sec/batch
+2021-01-25 18:54:10.329424 #train# step 3251, loss = 1.0043, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:55:36.594610 #train# step 3301, loss = 1.0039, 0.8 sec/batch
+2021-01-25 18:56:55.451235 #train# step 3351, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 18:58:21.295687 #train# step 3401, loss = 1.0044, 0.8 sec/batch
+2021-01-25 18:59:40.073694 #train# step 3451, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:01:09.855245 #train# step 3501, loss = 1.0041, 0.8 sec/batch
+2021-01-25 19:02:28.568258 #train# step 3551, loss = 1.0043, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:03:57.054593 #train# step 3601, loss = 1.0043, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:05:23.170219 #train# step 3651, loss = 1.0039, 0.8 sec/batch
+2021-01-25 19:06:41.813542 #train# step 3701, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:08:10.279657 #train# step 3751, loss = 1.0043, 0.8 sec/batch
+2021-01-25 19:09:28.972837 #train# step 3801, loss = 1.0043, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:10:55.947679 #train# step 3851, loss = 1.0045, 0.8 sec/batch
+2021-01-25 19:12:14.591176 #train# step 3901, loss = 1.0041, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:13:43.148561 #train# step 3951, loss = 1.0045, 0.8 sec/batch
+2021-01-25 19:15:01.783369 #train# step 4001, loss = 1.0044, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:16:30.579740 #train# step 4051, loss = 1.0046, 0.8 sec/batch
+2021-01-25 19:17:49.318879 #train# step 4101, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:19:18.979330 #train# step 4151, loss = 1.0043, 0.8 sec/batch
+2021-01-25 19:20:37.850653 #train# step 4201, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:22:08.991822 #train# step 4251, loss = 1.0042, 0.8 sec/batch
+2021-01-25 19:23:27.653740 #train# step 4301, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:24:59.012951 #train# step 4351, loss = 1.0041, 0.8 sec/batch
+2021-01-25 19:26:17.736682 #train# step 4401, loss = 1.0039, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:27:46.932817 #train# step 4451, loss = 1.0044, 0.8 sec/batch
+2021-01-25 19:29:05.491665 #train# step 4501, loss = 1.0041, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:30:33.274126 #train# step 4551, loss = 1.0045, 0.8 sec/batch
+2021-01-25 19:31:52.020957 #train# step 4601, loss = 1.0044, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:33:20.418351 #train# step 4651, loss = 1.0043, 0.8 sec/batch
+2021-01-25 19:34:39.253468 #train# step 4701, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:36:09.261044 #train# step 4751, loss = 1.0041, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:37:37.079560 #train# step 4801, loss = 1.0044, 0.8 sec/batch
+2021-01-25 19:38:55.792961 #train# step 4851, loss = 1.0039, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:40:27.237970 #train# step 4901, loss = 1.0042, 0.8 sec/batch
+2021-01-25 19:41:46.277773 #train# step 4951, loss = 1.0039, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:43:15.750742 #train# step 5001, loss = 1.0044, 0.8 sec/batch
+2021-01-25 19:44:34.704318 #train# step 5051, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:46:02.559783 #train# step 5101, loss = 1.0045, 0.8 sec/batch
+2021-01-25 19:47:21.706578 #train# step 5151, loss = 1.0045, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:48:49.572343 #train# step 5201, loss = 1.0039, 0.8 sec/batch
+2021-01-25 19:50:08.609359 #train# step 5251, loss = 1.0039, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:51:38.517098 #train# step 5301, loss = 1.0041, 0.8 sec/batch
+2021-01-25 19:52:57.669284 #train# step 5351, loss = 1.0046, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:54:26.125799 #train# step 5401, loss = 1.0041, 0.8 sec/batch
+2021-01-25 19:55:44.776287 #train# step 5451, loss = 1.0039, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 19:57:10.754613 #train# step 5501, loss = 1.0045, 0.8 sec/batch
+2021-01-25 19:58:29.089064 #train# step 5551, loss = 1.0040, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:00:01.990101 #train# step 5601, loss = 1.0039, 0.8 sec/batch
+2021-01-25 20:01:20.366211 #train# step 5651, loss = 1.0044, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:02:50.165473 #train# step 5701, loss = 1.0042, 0.8 sec/batch
+2021-01-25 20:04:08.723948 #train# step 5751, loss = 1.0040, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:05:34.705375 #train# step 5801, loss = 1.0043, 0.8 sec/batch
+2021-01-25 20:06:53.153952 #train# step 5851, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:08:19.026366 #train# step 5901, loss = 1.0045, 0.8 sec/batch
+2021-01-25 20:09:37.470094 #train# step 5951, loss = 1.0042, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:11:04.635962 #train# step 6001, loss = 1.0041, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:12:37.127191 #train# step 6051, loss = 1.0041, 0.8 sec/batch
+2021-01-25 20:13:56.016939 #train# step 6101, loss = 1.0041, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:15:26.907302 #train# step 6151, loss = 1.0044, 0.8 sec/batch
+2021-01-25 20:16:46.600870 #train# step 6201, loss = 1.0039, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:18:17.981418 #train# step 6251, loss = 1.0043, 0.8 sec/batch
+2021-01-25 20:19:37.347753 #train# step 6301, loss = 1.0041, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:21:03.570436 #train# step 6351, loss = 1.0044, 0.8 sec/batch
+2021-01-25 20:22:22.484644 #train# step 6401, loss = 1.0041, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:23:54.194472 #train# step 6451, loss = 1.0037, 0.8 sec/batch
+2021-01-25 20:25:13.353430 #train# step 6501, loss = 1.0040, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:26:40.932375 #train# step 6551, loss = 1.0045, 0.9 sec/batch
+2021-01-25 20:28:01.245010 #train# step 6601, loss = 1.0040, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:29:32.482234 #train# step 6651, loss = 1.0041, 0.9 sec/batch
+2021-01-25 20:30:52.956143 #train# step 6701, loss = 1.0045, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:32:23.327401 #train# step 6751, loss = 1.0044, 0.8 sec/batch
+2021-01-25 20:33:42.602517 #train# step 6801, loss = 1.0045, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:35:10.575277 #train# step 6851, loss = 1.0042, 0.8 sec/batch
+2021-01-25 20:36:29.725982 #train# step 6901, loss = 1.0039, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:37:57.641335 #train# step 6951, loss = 1.0044, 0.8 sec/batch
+2021-01-25 20:39:16.956295 #train# step 7001, loss = 1.0041, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:40:46.746967 #train# step 7051, loss = 1.0046, 0.8 sec/batch
+2021-01-25 20:42:06.305612 #train# step 7101, loss = 1.0040, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:43:39.376864 #train# step 7151, loss = 1.0041, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:45:16.434240 #train# step 7201, loss = 1.0044, 0.9 sec/batch
+2021-01-25 20:46:36.051561 #train# step 7251, loss = 1.0040, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:48:06.488542 #train# step 7301, loss = 1.0042, 0.8 sec/batch
+2021-01-25 20:49:25.124911 #train# step 7351, loss = 1.0043, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:50:54.074437 #train# step 7401, loss = 1.0044, 0.8 sec/batch
+2021-01-25 20:52:13.130828 #train# step 7451, loss = 1.0041, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:53:40.641104 #train# step 7501, loss = 1.0044, 0.8 sec/batch
+2021-01-25 20:54:59.291362 #train# step 7551, loss = 1.0043, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:56:28.867416 #train# step 7601, loss = 1.0039, 0.8 sec/batch
+2021-01-25 20:57:47.809299 #train# step 7651, loss = 1.0044, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 20:59:15.559470 #train# step 7701, loss = 1.0044, 0.8 sec/batch
+2021-01-25 21:00:34.803520 #train# step 7751, loss = 1.0040, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 21:02:06.626095 #train# step 7801, loss = 1.0046, 0.9 sec/batch
+2021-01-25 21:03:32.669277 #train# step 7851, loss = 1.0038, 0.9 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 21:05:15.162323 #train# step 7901, loss = 1.0040, 0.8 sec/batch
+2021-01-25 21:06:38.638454 #train# step 7951, loss = 1.0041, 0.8 sec/batch
+#DQN train# initilizing Centers
+step:  0  finish
+step:  1  finish
+step:  2  finish
+step:  3  finish
+2021-01-25 21:08:10.364839 #traing# finish training
 saving model to ./models/lr_0.002_cqlambda_0.0001_subspace_num_4_dataset_VeRi_hashbit_256.npy
 model saved

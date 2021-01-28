@@ -10,20 +10,21 @@ def get_mAPs_and_cmcs(database, query,config):
     gallery_output = sign(database.output)
    # time.sleep(20)
     query_labels = np.squeeze( query.label)
-    #print("The query_labels has shape", query_labels.shape)
+    print("The query_labels has shape", query_labels.shape)
     gallery_labels = np.squeeze( database.label)
-  #  print("Starting computing the hamming distance")
+    print("Starting computing the hamming distance")
     dist = distance(query_output, gallery_output,dist_type='inner_product', pair=True)
  #   print("The size of the dist is {} bytes".format(dist.nbytes))
-   # print("End of computing the distance. Begining to evaluate")
+    print("End of computing the distance. Begining to evaluate")
  #   print(config['dataset'])
     if config['dataset'] == 'vehicleID':
         print("Beigin to evaluate vehicleid")
         all_cmc, mAP = eval_vehicleid(dist,query_labels,gallery_labels,None,None,50)
         print("end of evaluating vehicleid")
     elif config['dataset'] == 'VeRi':
-        query_cams = query.cam
-        gallery_cams = database.cam
+        query_cams = np.squeeze(query.cam)
+
+        gallery_cams = np.squeeze(database.cam)
         all_cmc, mAP = eval_veri(dist,query_labels,gallery_labels,query_cams,gallery_cams,50)
     return all_cmc, mAP
 

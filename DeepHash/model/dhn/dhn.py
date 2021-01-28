@@ -244,7 +244,10 @@ class DHN(object):
 
         #mAPs = MAPs(R)
         cmc, mAP = get_mAPs_and_cmcs(img_database,img_query,config=config)
-        print('The cmc: Rank1:{}, Rank5:{}, Rank10:{}; ,mAP is {}'.format(cmc[0],cmc[4], cmc[9],mAP))
+        print('The cmc: Rank1:{},Rank2:{},Rank3:{},Rank4:{} Rank5:{},Rank6:{},Rank7:{},Rank8:{},Rank9:{}, Rank10:{}'
+              'Rank11:{},Rank12:{},Rank13:{},Rank14{},Rank15:{},Rank16:{},Rank17:{},Rank18:{},Rank19:{},Rank20:{},mAP is {}'.format(
+            cmc[0], cmc[1], cmc[2], cmc[3], cmc[4], cmc[5], cmc[6], cmc[7], cmc[8], cmc[9], cmc[10], cmc[11], cmc[12], cmc[13], cmc[14],
+            cmc[15], cmc[16], cmc[17], cmc[18],cmc[19],mAP))
         return cmc, mAP
 
         #

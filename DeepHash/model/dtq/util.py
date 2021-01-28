@@ -3,7 +3,7 @@ import math
 from distance.npversion import distance
 
 class Dataset(object):
-    def __init__(self, dataset, output_dim, code_dim):
+    def __init__(self, dataset, output_dim, code_dim,config):
         self._dataset = dataset
         self.n_samples = dataset.n_samples
         self._train = dataset.train
@@ -14,6 +14,9 @@ class Dataset(object):
         self._index_in_epoch = 0
         self._epochs_complete = 0
         self._perm = np.arange(self.n_samples)
+        self.label_dim = config.label_dim
+        self.dataset_name = config.dataset
+        self.label_to_one_hot = np.eye(self.label_dim)
         np.random.shuffle(self._perm)
         return
 
@@ -88,6 +91,10 @@ class Dataset(object):
         arr = self.triplets[start:end]
         idx = self._perm[np.concatenate([arr[:, 0], arr[:, 1], arr[:, 2]], axis=0)]
         data, label = self._dataset.data(idx)
+        if self.dataset_name in ['vehicleID','VeRi']:
+            print("label has shape", label.shape)
+            label = np.squeeze(label)
+            label = self.label_to_one_hot[label]
 
         return data, label, self._codes[idx]
 
@@ -113,6 +120,10 @@ class Dataset(object):
         end = self._index_in_epoch
 
         data, label = self._dataset.data(self._perm[start:end])
+        if self.dataset_name in ['vehicleID','VeRi']:
+
+            label = np.squeeze(label)
+            label = self.label_to_one_hot[label]
         return (data, label, self._codes[self._perm[start: end], :])
 
     def next_batch_output_codes(self, batch_size):

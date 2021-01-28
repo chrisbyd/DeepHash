@@ -16,6 +16,7 @@ class Dataset(object):
         self.label_dim = config['label_dim']
         self.dataset_name = config['dataset']
         self.batch_size = config['batch_size']
+        self.batch_size = config['batch_size']
 
         self.label_to_one_hot = np.eye(self.label_dim)
         self.special_datasets = ["vehicleID","VeRi"]
