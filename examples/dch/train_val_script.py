@@ -67,8 +67,9 @@ if not args.evaluate:
     train_img = dataset.import_train(data_root, args.img_tr)
     model_weights = model.train(train_img, database_img, query_img, args)
     args.model_weights = model_weights
-
+args.model_weights = './models/lr_0.005_cqlambda_0_alpha_0.5_bias_0.0_gamma_20_dataset_VeRi_hashbit_512.npy'
 # maps = model.validation(database_img, query_img, args)
+cmc, mAP = model.validation(database_img, query_img, args)
 # for key in maps:
 #     print(("{}\t{}".format(key, maps[key])))
 

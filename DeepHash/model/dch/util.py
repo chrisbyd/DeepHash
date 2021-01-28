@@ -72,6 +72,10 @@ class Dataset(object):
     def label(self):
         return self._dataset.get_labels()
 
+    @property
+    def cam(self):
+        return self._dataset.get_cams()
+
     def finish_epoch(self):
         self._index_in_epoch = 0
         np.random.shuffle(self._perm)

@@ -16,8 +16,8 @@ from tqdm import tqdm
 import model.plot as plot
 from architecture import img_alexnet_layers
 from evaluation import MAPs
-
-
+from evaluation import get_mAPs_and_cmcs
+from tqdm import tqdm
 class DCH(object):
     def __init__(self, config):
         ### Initialize setting
@@ -207,12 +207,12 @@ class DCH(object):
 
         self.sess.close()
 
-    def validation(self, img_query, img_database, R=100):
+    def validation(self, img_query, img_database, R=100,config = None):
         print("%s #validation# start validation" % (datetime.now()))
         query_batch = int(ceil(img_query.n_samples / float(self.val_batch_size)))
         img_query.finish_epoch()
         print("%s #validation# totally %d query in %d batches" % (datetime.now(), img_query.n_samples, query_batch))
-        for i in range(query_batch):
+        for i in tqdm(range(query_batch)):
             images, labels = img_query.next_batch(self.val_batch_size)
             output, loss = self.sess.run([self.img_last_layer, self.cos_loss],
                                    feed_dict={self.img: images,
@@ -224,7 +224,7 @@ class DCH(object):
         database_batch = int(ceil(img_database.n_samples / float(self.val_batch_size)))
         img_database.finish_epoch()
         print("%s #validation# totally %d database in %d batches" % (datetime.now(), img_database.n_samples, database_batch))
-        for i in range(database_batch):
+        for i in tqdm(range(database_batch)):
             images, labels = img_database.next_batch(self.val_batch_size)
 
             output, loss = self.sess.run([self.img_last_layer, self.cos_loss],
@@ -238,26 +238,33 @@ class DCH(object):
         mAPs = MAPs(R)
 
         self.sess.close()
-        prec, rec, mmap = mAPs.get_precision_recall_by_Hamming_Radius_All(img_database, img_query)
-        for i in range(self.output_dim+1):
-            #prec, rec, mmap = mAPs.get_precision_recall_by_Hamming_Radius(img_database, img_query, i)
-            plot.plot('prec', prec[i])
-            plot.plot('rec', rec[i])
-            plot.plot('mAP', mmap[i])
-            plot.tick()
-            print('Results ham dist [%d], prec:%s, rec:%s, mAP:%s'%(i, prec[i], rec[i], mmap[i]))
-
-        result_save_dir = os.path.join(self.save_dir, self.file_name)
-        if os.path.exists(result_save_dir) is False:
-            os.makedirs(result_save_dir)
-        plot.flush(result_save_dir)
-
-        prec, rec, mmap = mAPs.get_precision_recall_by_Hamming_Radius(img_database, img_query, 2)
-        return {
-            'i2i_by_feature': mAPs.get_mAPs_by_feature(img_database, img_query),
-            'i2i_after_sign': mAPs.get_mAPs_after_sign(img_database, img_query),
-            'i2i_prec_radius_2': prec,
-            'i2i_recall_radius_2': rec,
-            'i2i_map_radius_2': mmap,
-        }
+        cmc, mAP = get_mAPs_and_cmcs(img_database, img_query, config=config)
+        print('The cmc: Rank1:{},Rank2:{},Rank3:{},Rank4:{} Rank5:{},Rank6:{},Rank7:{},Rank8:{},Rank9:{}, Rank10:{}'
+              'Rank11:{},Rank12:{},Rank13:{},Rank14{},Rank15:{},Rank16:{},Rank17:{},Rank18:{},Rank19:{},Rank20:{},mAP is {}'.format(
+            cmc[0], cmc[1], cmc[2], cmc[3], cmc[4], cmc[5], cmc[6], cmc[7], cmc[8], cmc[9], cmc[10], cmc[11], cmc[12],
+            cmc[13], cmc[14],
+            cmc[15], cmc[16], cmc[17], cmc[18], cmc[19], mAP))
+        return cmc, mAP
+        # prec, rec, mmap = mAPs.get_precision_recall_by_Hamming_Radius_All(img_database, img_query)
+        # for i in range(self.output_dim+1):
+        #     #prec, rec, mmap = mAPs.get_precision_recall_by_Hamming_Radius(img_database, img_query, i)
+        #     plot.plot('prec', prec[i])
+        #     plot.plot('rec', rec[i])
+        #     plot.plot('mAP', mmap[i])
+        #     plot.tick()
+        #     print('Results ham dist [%d], prec:%s, rec:%s, mAP:%s'%(i, prec[i], rec[i], mmap[i]))
+        #
+        # result_save_dir = os.path.join(self.save_dir, self.file_name)
+        # if os.path.exists(result_save_dir) is False:
+        #     os.makedirs(result_save_dir)
+        # plot.flush(result_save_dir)
+        #
+        # prec, rec, mmap = mAPs.get_precision_recall_by_Hamming_Radius(img_database, img_query, 2)
+        # return {
+        #     'i2i_by_feature': mAPs.get_mAPs_by_feature(img_database, img_query),
+        #     'i2i_after_sign': mAPs.get_mAPs_after_sign(img_database, img_query),
+        #     'i2i_prec_radius_2': prec,
+        #     'i2i_recall_radius_2': rec,
+        #     'i2i_map_radius_2': mmap,
+        # }
 

@@ -13,4 +13,4 @@ def validation(database_img, query_img, config):
     model = DCH(config)
     img_database = Dataset(database_img, config)
     img_query = Dataset(query_img, config)
-    return model.validation(img_query, img_database, config.R)
+    return model.validation(img_query, img_database, config.R,config)

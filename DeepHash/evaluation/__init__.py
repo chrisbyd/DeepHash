@@ -17,13 +17,12 @@ def get_mAPs_and_cmcs(database, query,config):
  #   print("The size of the dist is {} bytes".format(dist.nbytes))
     print("End of computing the distance. Begining to evaluate")
  #   print(config['dataset'])
-    if config['dataset'] == 'vehicleID':
+    if config.dataset == 'vehicleID':
         print("Beigin to evaluate vehicleid")
         all_cmc, mAP = eval_vehicleid(dist,query_labels,gallery_labels,None,None,50)
         print("end of evaluating vehicleid")
-    elif config['dataset'] == 'VeRi':
+    elif config.dataset == 'VeRi' :
         query_cams = np.squeeze(query.cam)
-
         gallery_cams = np.squeeze(database.cam)
         all_cmc, mAP = eval_veri(dist,query_labels,gallery_labels,query_cams,gallery_cams,50)
     return all_cmc, mAP
