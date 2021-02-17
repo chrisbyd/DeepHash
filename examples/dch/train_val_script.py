@@ -5,6 +5,7 @@ import numpy as np
 import scipy.io as sio
 import model.dch as model
 import data_provider.image as dataset
+from util import results_to_excel, make_dirs
 
 from pprint import pprint
 
@@ -63,13 +64,24 @@ pprint(vars(args))
 data_root = os.path.join(args.data_dir, args.dataset)
 query_img, database_img = dataset.import_validation(data_root, args.img_te, args.img_db)
 
-if not args.evaluate:
-    train_img = dataset.import_train(data_root, args.img_tr)
-    model_weights = model.train(train_img, database_img, query_img, args)
-    args.model_weights = model_weights
-args.model_weights = './models/lr_0.005_cqlambda_0_alpha_0.5_bias_0.0_gamma_20_dataset_VeRi_hashbit_512.npy'
-# maps = model.validation(database_img, query_img, args)
+# if not args.evaluate:
+#     train_img = dataset.import_train(data_root, args.img_tr)
+#     model_weights = model.train(train_img, database_img, query_img, args)
+#     args.model_weights = model_weights
+args.model_weights = './models/lr_0.005_cqlambda_0_alpha_0.5_bias_0.0_gamma_20_dataset_vehicleID_hashbit_512.npy'
+
+#maps = model.validation(database_img, query_img, args)
 cmc, mAP = model.validation(database_img, query_img, args)
+print(
+    'The cmc: Rank1:{},Rank2:{},Rank3:{},Rank4:{} Rank5:{},Rank6:{},Rank7:{},Rank8:{},Rank9:{}, Rank10:{}'
+    'Rank11:{},Rank12:{},Rank13:{},Rank14{},Rank15:{},Rank16:{},Rank17:{},Rank18:{},Rank19:{},Rank20:{},mAP is {}'.format(
+        cmc[0], cmc[1], cmc[2], cmc[3], cmc[4], cmc[5], cmc[6], cmc[7], cmc[8], cmc[9], cmc[10],
+        cmc[11], cmc[12],
+        cmc[13], cmc[14],
+        cmc[15], cmc[16], cmc[17], cmc[18], cmc[19], mAP))
+results = [item for item in cmc[:20]] + [mAP]
+model_name = 'DCH-{}'.format(args.output_dim)
+results_to_excel(results, model_name, args.dataset)
 # for key in maps:
 #     print(("{}\t{}".format(key, maps[key])))
 

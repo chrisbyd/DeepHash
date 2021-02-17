@@ -1,0 +1,63 @@
+{'R': 5000,
+ 'alpha': 10.0,
+ 'batch_size': 800,
+ 'cq_lambda': 0.0,
+ 'dataset': 'vehicleID',
+ 'decay_step': 5000,
+ 'device': '/gpu:0',
+ 'finetune_all': True,
+ 'img_db': '../../data/vehicleID/database.txt',
+ 'img_model': 'alexnet',
+ 'img_te': '../../data/vehicleID/test.txt',
+ 'img_tr': '../../data/vehicleID/train.txt',
+ 'label_dim': 13164,
+ 'learning_rate': 5e-05,
+ 'learning_rate_decay_factor': 0.5,
+ 'log_dir': 'tflog',
+ 'loss_type': 'normed_cross_entropy',
+ 'max_iter': 10000,
+ 'model_weights': '../../architecture/pretrained_model/reference_pretrain.npy',
+ 'output_dim': 512,
+ 'save_dir': './models/',
+ 'val_batch_size': 100}
+initializing
+launching session
+loading img model from ./models/lr_5e-05_cqlambda_0.0_alpha_10.0_dataset_vehicleID_hashbit_512.npy
+['conv1', 'conv2', 'conv3', 'conv4', 'conv5', 'fc6', 'fc7', 'fc8']
+img model loading finished
+Initializing Dataset
+Dataset already
+Initializing Dataset
+Dataset already
+2021-01-28 23:42:47.565472 #validation# start validation
+2021-01-28 23:42:47.565496 #validation# totally 5693 query in 57 batches
+2021-01-28 23:43:25.653930 #validation# totally 800 database in 8 batches
+The query_labels has shape (5693,)
+Starting computing the hamming distance
+End of computing the distance. Begining to evaluate
+Beigin to evaluate vehicleid
+end of evaluating vehicleid
+The cmc: Rank1:0.3781837224960327,Rank2:0.44422975182533264,Rank3:0.48515722155570984,Rank4:0.5130862593650818 Rank5:0.5355700254440308,Rank6:0.5534867644309998,Rank7:0.5677147507667542,Rank8:0.580713152885437,Rank9:0.5931845903396606, Rank10:0.605480432510376Rank11:0.6128578782081604,Rank12:0.6197084188461304,Rank13:0.6263833045959473,Rank140.6318285465240479,Rank15:0.6370981931686401,Rank16:0.6446513533592224,Rank17:0.6472861170768738,Rank18:0.6513261795043945,Rank19:0.6564201712608337,Rank20:0.6611628532409668,mAP is 0.45415360207800404
+The cmc: Rank1:0.3781837224960327, Rank5:0.5355700254440308, Rank10:0.605480432510376 and the mAP is 0.45415360207800404
+{'R': 5000,
+ 'alpha': 10.0,
+ 'batch_size': 800,
+ 'cq_lambda': 0.0,
+ 'dataset': 'vehicleID',
+ 'decay_step': 5000,
+ 'device': '/gpu:0',
+ 'finetune_all': True,
+ 'img_db': '../../data/vehicleID/database.txt',
+ 'img_model': 'alexnet',
+ 'img_te': '../../data/vehicleID/test.txt',
+ 'img_tr': '../../data/vehicleID/train.txt',
+ 'label_dim': 13164,
+ 'learning_rate': 5e-05,
+ 'learning_rate_decay_factor': 0.5,
+ 'log_dir': 'tflog',
+ 'loss_type': 'normed_cross_entropy',
+ 'max_iter': 10000,
+ 'model_weights': './models/lr_5e-05_cqlambda_0.0_alpha_10.0_dataset_vehicleID_hashbit_512.npy',
+ 'output_dim': 512,
+ 'save_dir': './models/',
+ 'val_batch_size': 100}

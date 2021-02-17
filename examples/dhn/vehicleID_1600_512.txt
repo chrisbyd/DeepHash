@@ -1,0 +1,66 @@
+{'R': 5000,
+ 'alpha': 10.0,
+ 'batch_size': 800,
+ 'cq_lambda': 0.0,
+ 'dataset': 'vehicleID',
+ 'decay_step': 5000,
+ 'device': '/gpu:0',
+ 'finetune_all': True,
+ 'img_db': '../../data/vehicleID/database.txt',
+ 'img_model': 'alexnet',
+ 'img_te': '../../data/vehicleID/test.txt',
+ 'img_tr': '../../data/vehicleID/train.txt',
+ 'label_dim': 13164,
+ 'learning_rate': 5e-05,
+ 'learning_rate_decay_factor': 0.5,
+ 'log_dir': 'tflog',
+ 'loss_type': 'normed_cross_entropy',
+ 'max_iter': 1000,
+ 'model_weights': '../../architecture/pretrained_model/reference_pretrain.npy',
+ 'output_dim': 512,
+ 'save_dir': './models/',
+ 'val_batch_size': 100}
+The number of samples 11777
+The number of samples 1600
+initializing
+launching session
+loading img model from ./models/lr_5e-05_cqlambda_0.0_alpha_10.0_dataset_vehicleID_hashbit_512.npy
+['conv1', 'conv2', 'conv3', 'conv4', 'conv5', 'fc6', 'fc7', 'fc8']
+img model loading finished
+Initializing Dataset
+Dataset already
+Initializing Dataset
+Dataset already
+2021-02-17 12:05:58.188541 #validation# start validation
+2021-02-17 12:05:58.188567 #validation# totally 11777 query in 118 batches
+2021-02-17 12:07:12.182207 #validation# totally 1600 database in 16 batches
+The query_labels has shape (11777,)
+Starting computing the hamming distance
+End of computing the distance. Begining to evaluate
+Beigin to evaluate vehicleid
+end of evaluating vehicleid
+The cmc: Rank1:0.34270188212394714,Rank2:0.4136027991771698,Rank3:0.45300161838531494,Rank4:0.47643712162971497 Rank5:0.49698564410209656,Rank6:0.5123546123504639,Rank7:0.5243270993232727,Rank8:0.5367241501808167,Rank9:0.546743631362915, Rank10:0.5569329857826233Rank11:0.5639806389808655,Rank12:0.5699244141578674,Rank13:0.5775664448738098,Rank140.5841895341873169,Rank15:0.5903880596160889,Rank16:0.5960770845413208,Rank17:0.6020208597183228,Rank18:0.6083043217658997,Rank19:0.6132291555404663,Rank20:0.6171351075172424,mAP is 0.4176710596006447
+The cmc: Rank1:0.34270188212394714, Rank5:0.49698564410209656, Rank10:0.5569329857826233 and the mAP is 0.4176710596006447
+The cmc: Rank1:0.34270188212394714,Rank2:0.4136027991771698,Rank3:0.45300161838531494,Rank4:0.47643712162971497 Rank5:0.49698564410209656,Rank6:0.5123546123504639,Rank7:0.5243270993232727,Rank8:0.5367241501808167,Rank9:0.546743631362915, Rank10:0.5569329857826233Rank11:0.5639806389808655,Rank12:0.5699244141578674,Rank13:0.5775664448738098,Rank140.5841895341873169,Rank15:0.5903880596160889,Rank16:0.5960770845413208,Rank17:0.6020208597183228,Rank18:0.6083043217658997,Rank19:0.6132291555404663,Rank20:0.6171351075172424,mAP is 0.4176710596006447
+{'R': 5000,
+ 'alpha': 10.0,
+ 'batch_size': 800,
+ 'cq_lambda': 0.0,
+ 'dataset': 'vehicleID',
+ 'decay_step': 5000,
+ 'device': '/gpu:0',
+ 'finetune_all': True,
+ 'img_db': '../../data/vehicleID/database.txt',
+ 'img_model': 'alexnet',
+ 'img_te': '../../data/vehicleID/test.txt',
+ 'img_tr': '../../data/vehicleID/train.txt',
+ 'label_dim': 13164,
+ 'learning_rate': 5e-05,
+ 'learning_rate_decay_factor': 0.5,
+ 'log_dir': 'tflog',
+ 'loss_type': 'normed_cross_entropy',
+ 'max_iter': 1000,
+ 'model_weights': './models/lr_5e-05_cqlambda_0.0_alpha_10.0_dataset_vehicleID_hashbit_512.npy',
+ 'output_dim': 512,
+ 'save_dir': './models/',
+ 'val_batch_size': 100}

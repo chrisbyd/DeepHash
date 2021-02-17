@@ -3,7 +3,7 @@
 lr=0.00005 
 q_lambda=0.0
 alpha=10.0 # 0.2
-dataset=VeRi # imagenet # cifar10,  nuswide_81, coco, vehicledID
+dataset=vehicleID # imagenet # cifar10,  nuswide_81, coco, vehicledID
 log_dir=tflog
 test_mode='800'
 
@@ -16,7 +16,7 @@ fi
 export TF_CPP_MIN_LOG_LEVEL=3
 #                                                         lr  output_dim  iter    q_lamb    alpha     dataset     gpu    log_dir
 echo "Starting training hash bit 256"
-CUDA_VISIBLE_DEVICES=$gpu python train_val_script.py      $lr 512     10000    $q_lambda  $alpha   $dataset    0   $log_dir  ../../data/VeRi  $test_mode | tee > VeRi_512.txt
+CUDA_VISIBLE_DEVICES=$gpu python train_val_script.py      $lr 512     1000    $q_lambda  $alpha   $dataset    0   $log_dir  ../../data/vehicleID  $test_mode | tee > vehicleID_1600_512.txt
 echo "Starting training hash bit 512"
 #CUDA_VISIBLE_DEVICES=$gpu python train_val_script.py      $lr 512     10000    $q_lambda  $alpha   $dataset    0   $log_dir  ../../data/VeRi  $test_mode | tee > VeRi_512.txt
 #echo "Star training 1024"

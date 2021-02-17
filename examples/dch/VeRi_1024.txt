@@ -1,0 +1,184 @@
+{'R': 50,
+ 'alpha': 0.5,
+ 'batch_size': 800,
+ 'bias': 0.0,
+ 'data_dir': '../../data/',
+ 'dataset': 'VeRi',
+ 'decay_factor': 0.1,
+ 'decay_step': 10000,
+ 'evaluate': False,
+ 'finetune_all': True,
+ 'gamma': 20,
+ 'gpus': '0',
+ 'img_db': '../../data/VeRi/database.txt',
+ 'img_model': 'alexnet',
+ 'img_te': '../../data/VeRi/test.txt',
+ 'img_tr': '../../data/VeRi/train.txt',
+ 'iter_num': 5000,
+ 'label_dim': 576,
+ 'log_dir': 'tflog',
+ 'lr': 0.005,
+ 'model_weights': '../../architecture/pretrained_model/reference_pretrain.npy',
+ 'output_dim': 1024,
+ 'q_lambda': 0,
+ 'save_dir': './models/',
+ 'test_mode': '800',
+ 'val_batch_size': 16,
+ 'with_tanh': True}
+initializing
+launching session
+loading img model from ./models/lr_0.005_cqlambda_0_alpha_0.5_bias_0.0_gamma_20_dataset_VeRi_hashbit_1024.npy
+['conv1', 'conv2', 'conv3', 'conv4', 'conv5', 'fc6', 'fc7', 'fc8']
+img model loading finished
+Initializing Dataset
+Dataset already
+Initializing Dataset
+Dataset already
+2021-02-16 23:33:20.850570 #validation# start validation
+2021-02-16 23:33:20.850734 #validation# totally 1678 query in 105 batches
+Cosine Loss: 0.13697466
+Cosine Loss: 0.16694325
+Cosine Loss: 0.25110435
+Cosine Loss: 0.1510912
+Cosine Loss: 0.25611383
+Cosine Loss: 0.33686543
+Cosine Loss: 0.2175499
+Cosine Loss: 0.17532302
+Cosine Loss: 0.21649414
+Cosine Loss: 0.16259487
+Cosine Loss: 0.16078334
+Cosine Loss: 0.19396655
+Cosine Loss: 0.29054034
+Cosine Loss: 0.20746057
+Cosine Loss: 0.14797188
+Cosine Loss: 0.15225296
+Cosine Loss: 0.25545022
+Cosine Loss: 0.22182246
+Cosine Loss: 0.24959844
+Cosine Loss: 0.10484098
+Cosine Loss: 0.10052097
+Cosine Loss: 0.23588476
+Cosine Loss: 0.21906996
+Cosine Loss: 0.19249265
+Cosine Loss: 0.15245834
+Cosine Loss: 0.14943127
+Cosine Loss: 0.28938293
+Cosine Loss: 0.23368113
+Cosine Loss: 0.49966773
+Cosine Loss: 0.6087858
+Cosine Loss: 0.24354263
+Cosine Loss: 0.23931342
+Cosine Loss: 0.15449551
+Cosine Loss: 0.3075938
+Cosine Loss: 0.17809068
+Cosine Loss: 0.31938556
+Cosine Loss: 0.16306259
+Cosine Loss: 0.13072626
+Cosine Loss: 0.20271839
+Cosine Loss: 0.3790332
+Cosine Loss: 0.22450079
+Cosine Loss: 0.18890056
+Cosine Loss: 0.22001678
+Cosine Loss: 0.2284337
+Cosine Loss: 0.2510186
+Cosine Loss: 0.49346802
+Cosine Loss: 0.22462788
+Cosine Loss: 0.14727384
+Cosine Loss: 0.108870335
+Cosine Loss: 0.12706976
+Cosine Loss: 0.2633118
+Cosine Loss: 0.1695324
+Cosine Loss: 0.15794826
+Cosine Loss: 0.20728566
+Cosine Loss: 0.12824206
+Cosine Loss: 0.25577694
+Cosine Loss: 0.1808069
+Cosine Loss: 0.2619889
+Cosine Loss: 0.13260128
+Cosine Loss: 0.31653306
+Cosine Loss: 0.17330001
+Cosine Loss: 0.17240852
+Cosine Loss: 0.20255677
+Cosine Loss: 0.2512689
+Cosine Loss: 0.16393724
+Cosine Loss: 0.27727184
+Cosine Loss: 0.18960057
+Cosine Loss: 0.13727489
+Cosine Loss: 0.31122887
+Cosine Loss: 0.22667806
+Cosine Loss: 0.33579132
+Cosine Loss: 0.134193
+Cosine Loss: 0.14105755
+Cosine Loss: 0.12845813
+Cosine Loss: 0.25674507
+Cosine Loss: 0.14037809
+Cosine Loss: 0.4598217
+Cosine Loss: 0.35726807
+Cosine Loss: 0.42624572
+Cosine Loss: 0.30402824
+Cosine Loss: 0.1527978
+Cosine Loss: 0.2916894
+Cosine Loss: 0.13514563
+Cosine Loss: 0.1916605
+Cosine Loss: 0.19255835
+Cosine Loss: 0.17521445
+Cosine Loss: 0.1985364
+Cosine Loss: 0.13916323
+Cosine Loss: 0.21032645
+Cosine Loss: 0.10486744
+Cosine Loss: 0.14949718
+Cosine Loss: 0.22436506
+Cosine Loss: 0.16651464
+Cosine Loss: 0.25542596
+Cosine Loss: 0.12020925
+Cosine Loss: 0.11722725
+Cosine Loss: 0.18909015
+Cosine Loss: 0.22717406
+Cosine Loss: 0.16265707
+Cosine Loss: 0.19912058
+Cosine Loss: 0.32688385
+Cosine Loss: 0.19969997
+Cosine Loss: 0.17575063
+Cosine Loss: 0.38019493
+Cosine Loss: 0.3735579
+2021-02-16 23:33:36.700256 #validation# totally 11579 database in 724 batches
+Cosine Loss[0/724]: 0.1499549
+Cosine Loss[100/724]: 0.25537533
+Cosine Loss[200/724]: 0.46857053
+Cosine Loss[300/724]: 0.17669824
+Cosine Loss[400/724]: 0.3386877
+Cosine Loss[500/724]: 0.1786342
+Cosine Loss[600/724]: 0.21591468
+Cosine Loss[700/724]: 0.25520444
+The query_labels has shape (1678,)
+Starting computing the hamming distance
+End of computing the distance. Begining to evaluate
+The cmc: Rank1:0.1734207421541214,Rank2:0.24255065619945526,Rank3:0.29439809918403625,Rank4:0.3331346809864044 Rank5:0.36889153718948364,Rank6:0.4016686677932739,Rank7:0.4314660429954529,Rank8:0.4493444561958313,Rank9:0.4773539900779724, Rank10:0.49165672063827515Rank11:0.5256257653236389,Rank12:0.5387365818023682,Rank13:0.5506555438041687,Rank140.5613825917243958,Rank15:0.5721096396446228,Rank16:0.5804529190063477,Rank17:0.5905840396881104,Rank18:0.5983313322067261,Rank19:0.6048867702484131,Rank20:0.6144219040870667,mAP is 0.12148206100728885
+The cmc: Rank1:0.1734207421541214,Rank2:0.24255065619945526,Rank3:0.29439809918403625,Rank4:0.3331346809864044 Rank5:0.36889153718948364,Rank6:0.4016686677932739,Rank7:0.4314660429954529,Rank8:0.4493444561958313,Rank9:0.4773539900779724, Rank10:0.49165672063827515Rank11:0.5256257653236389,Rank12:0.5387365818023682,Rank13:0.5506555438041687,Rank140.5613825917243958,Rank15:0.5721096396446228,Rank16:0.5804529190063477,Rank17:0.5905840396881104,Rank18:0.5983313322067261,Rank19:0.6048867702484131,Rank20:0.6144219040870667,mAP is 0.12148206100728885
+{'R': 50,
+ 'alpha': 0.5,
+ 'batch_size': 800,
+ 'bias': 0.0,
+ 'data_dir': '../../data/',
+ 'dataset': 'VeRi',
+ 'decay_factor': 0.1,
+ 'decay_step': 10000,
+ 'evaluate': False,
+ 'finetune_all': True,
+ 'gamma': 20,
+ 'gpus': '0',
+ 'img_db': '../../data/VeRi/database.txt',
+ 'img_model': 'alexnet',
+ 'img_te': '../../data/VeRi/test.txt',
+ 'img_tr': '../../data/VeRi/train.txt',
+ 'iter_num': 5000,
+ 'label_dim': 576,
+ 'log_dir': 'tflog',
+ 'lr': 0.005,
+ 'model_weights': './models/lr_0.005_cqlambda_0_alpha_0.5_bias_0.0_gamma_20_dataset_VeRi_hashbit_1024.npy',
+ 'output_dim': 1024,
+ 'q_lambda': 0,
+ 'save_dir': './models/',
+ 'test_mode': '800',
+ 'val_batch_size': 16,
+ 'with_tanh': True}
